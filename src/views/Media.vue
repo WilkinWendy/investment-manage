@@ -127,7 +127,7 @@ export default {
       view: 'grid',
 
       selectedFile: {
-        path: '/static/icon/empty_file.svg'
+        path: require('@/assets/icon/file_empty.svg')
       },
 
       imageMime: ['image/jpeg', 'image/png', 'image/svg+xml'],
@@ -188,7 +188,9 @@ export default {
     },
 
     computeFileImage(file) {
-      return this.isImage(file) ? file.path : '/static/icon/file_empty.svg'
+      return this.isImage(file)
+        ? file.path
+        : require('@/assets/icon/file_empty.svg')
     }
   }
 }

@@ -141,7 +141,7 @@ export default {
 
   computed: {
     computeLogo() {
-      return '/static/m.png'
+      return require('@/assets/m.png')
     },
     computeMenu() {
       return routes[0].children

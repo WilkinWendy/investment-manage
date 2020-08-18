@@ -1,6 +1,6 @@
 <template>
   <v-card text>
-    <v-responsive height="380" src="/static/bg/4.jpg">
+    <v-responsive height="380" :src="require('@/assets/bg/4.jpg')">
       <v-layout column align-center justify-center>
         <v-avatar size="200" class="mx-5">
           <img :src="user.avatar" :alt="user.name" />

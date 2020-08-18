@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-responsive src="/static/nature/n5.jpeg" height="350">
+    <v-responsive :src="require('@/assets/nature/n5.jpeg')" height="350">
       <v-layout column class="media ma-0">
         <v-card-title>
           <v-btn dark icon> <v-icon>chevron_left</v-icon> </v-btn>

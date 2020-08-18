@@ -27,7 +27,7 @@
           <v-btn icon large text slot="activator" v-on="on">
             <v-avatar size="30px">
               <img
-                :src="require('@/assets/icons/man_4.jpg')"
+                :src="require('@/assets/avatar/man_4.jpg')"
                 alt="Michael Wang"
               />
             </v-avatar>

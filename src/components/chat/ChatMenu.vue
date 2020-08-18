@@ -3,7 +3,7 @@
     <div>
       <v-btn icon large text slot="activator">
         <v-avatar>
-          <img src="/static/avatar/man_4.jpg" alt="Michael Wang" />
+          <img :src="require('@/assets/avatar/man_4.jpg')" alt="Michael Wang" />
         </v-avatar>
       </v-btn>
     </div>

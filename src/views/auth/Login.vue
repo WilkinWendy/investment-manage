@@ -4,7 +4,11 @@
       <v-col>
         <v-card class="pa-3 page-login__card" tile>
           <v-card-title>
-            <img src="/static/m.png" alt="Vue Material Admin" width="55" />
+            <img
+              :src="require('@/assets/m.png')"
+              alt="Vue Material Admin"
+              width="55"
+            />
             <h1 class="primary--text display-1">
               Chiron Trading
             </h1>

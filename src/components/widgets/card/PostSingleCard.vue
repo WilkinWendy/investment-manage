@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-responsive
-      src="/static/nature/n3.jpeg"
+      :src="require('@/assets/nature/n3.jpeg')"
       :height="imageHeight"
       class="white--text"
     >

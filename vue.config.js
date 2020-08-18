@@ -63,7 +63,7 @@ module.exports = {
 
   assetsDir: 'static',
   runtimeCompiler: true,
-
+  publicPath: './',
   pluginOptions: {
     express: {
       shouldServeApp: true,

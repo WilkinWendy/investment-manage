@@ -18,6 +18,4 @@ release
 *.njsproj
 *.sln
 
-dist/
-
 .aliossrc

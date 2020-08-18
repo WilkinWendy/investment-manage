@@ -3,10 +3,6 @@
     <v-app-bar-nav-icon @click="handleDrawerToggle" />
     <v-spacer />
     <v-toolbar-items>
-      <v-btn text href="mailto:wangqiangshen@gmail.com">Hire Me</v-btn>
-      <v-btn icon href="https://github.com/tookit/vue-material-admin">
-        <v-icon>mdi-github</v-icon>
-      </v-btn>
       <v-btn icon @click="handleFullScreen()">
         <v-icon>fullscreen</v-icon>
       </v-btn>
@@ -30,7 +26,10 @@
         <template v-slot:activator="{ on }">
           <v-btn icon large text slot="activator" v-on="on">
             <v-avatar size="30px">
-              <img src="/static/avatar/man_4.jpg" alt="Michael Wang" />
+              <img
+                :src="require('@/assets/icons/man_4.jpg')"
+                alt="Michael Wang"
+              />
             </v-avatar>
           </v-btn>
         </template>

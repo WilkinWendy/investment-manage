@@ -58,172 +58,57 @@ export const protectedRoute = [
       group: 'apps',
       icon: ''
     },
-    redirect: '/dashboard',
+    redirect: '/welcome',
     children: [
       {
-        path: '/dashboard',
-        name: 'Dashboard',
+        path: '/welcome',
+        name: 'Welcome',
         meta: {
-          title: 'Dashboard',
+          title: 'Welcome',
           group: 'apps',
           icon: 'mdi-view-dashboard'
         },
-        component: () => import('@/views/Dashboard.vue')
+        component: () => import('@/views/pages/welcome/Index.vue')
       },
       {
-        path: '/task',
+        path: '/portfolios',
+        name: 'Portfolios',
         meta: {
-          title: 'Task',
+          title: 'Portfolios',
           group: 'apps',
-          icon: 'mdi-calendar-check'
+          icon: 'mdi-view-dashboard'
         },
-        name: 'Task',
-        props: (route) => ({
-          type: route.query.type
-        }),
-        component: () => import('@/views/Calendar.vue')
+        component: () => import('@/views/pages/portfolio/Index.vue')
       },
       {
-        path: '/cms',
-        component: RouteWrapper,
-        redirect: '/cms/table',
+        path: '/strategies',
+        name: 'Strategies',
         meta: {
-          title: 'CMS',
-          icon: 'view_compact',
-          group: 'cms'
+          title: 'Strategies',
+          group: 'apps',
+          icon: 'mdi-view-dashboard'
         },
-        children: [
-          {
-            path: '/cms/table',
-            name: 'ListTable',
-            meta: {
-              title: 'CMS Table',
-              icon: 'mdi-database'
-            },
-            component: () => import('@/views/list/Table.vue')
-          }
-        ]
+        component: () => import('@/views/pages/strategy/Index.vue')
       },
-      //widgets
       {
-        path: '/widgets',
-        component: RouteWrapper,
+        path: '/algorithms',
+        name: 'Agorithms',
         meta: {
-          title: 'Widget',
-          icon: 'widgets',
-          group: 'advance'
+          title: 'Agorithms',
+          group: 'apps',
+          icon: 'mdi-view-dashboard'
         },
-        redirect: '/widgets/chart',
-        children: [
-          {
-            path: '/widgets/chart',
-            name: 'ChartWidget',
-            meta: {
-              title: 'Chart Widget',
-              icon: 'mdi-chart-line'
-            },
-            component: () => import('@/views/widgets/Chart.vue')
-          },
-          {
-            path: '/widgets/list',
-            name: 'ListWidget',
-            meta: {
-              title: 'List Widget',
-              icon: 'mdi-table'
-            },
-            component: () => import('@/views/widgets/List.vue')
-          },
-          {
-            path: '/widgets/social',
-            name: 'SocialWidget',
-            meta: {
-              title: 'Social Widget',
-              icon: 'mdi-face-profile'
-            },
-            component: () => import('@/views/widgets/Social.vue')
-          },
-          {
-            path: '/widgets/statistic',
-            name: 'StatisticWidget',
-            meta: {
-              title: 'Statistic Widget',
-              icon: 'mdi-hexagon'
-            },
-            component: () => import('@/views/widgets/Statistic.vue')
-          }
-        ]
+        component: () => import('@/views/pages/algorithm/Index.vue')
       },
       {
-        path: '/media',
+        path: '/accounts',
+        name: 'accounts',
         meta: {
-          title: 'Media',
-          icon: 'mdi-image'
+          title: 'My Accounts',
+          group: 'apps',
+          icon: 'mdi-view-dashboard'
         },
-        name: 'Media',
-        component: () => import('@/views/Media.vue')
-      },
-
-      {
-        path: '/403',
-        name: 'Forbidden',
-        meta: {
-          title: 'Access Denied',
-          hiddenInMenu: true
-        },
-        component: () => import('@/views/error/Deny.vue')
-      }
-    ]
-  },
-
-  // chat app
-  {
-    path: '/chat',
-    name: 'Chat',
-    component: LayoutChat,
-    redirect: {
-      path: '/chat/messaging'
-    },
-    meta: {
-      title: 'Chat',
-      group: 'apps',
-      icon: 'chat_bubble'
-    },
-    children: [
-      {
-        path: '/chat/messaging/:uuid?',
-        name: 'ChatMessaging',
-        props: true,
-        component: () => import('@/views/chat/ChatMessaging.vue')
-      },
-      {
-        path: '/chat/contact/:uuid?',
-        meta: {
-          public: true
-        },
-        name: 'ChatContact',
-        component: () => import('@/views/chat/ChatContact.vue')
-      }
-    ]
-  },
-
-  //mail app
-  {
-    path: '/mail',
-    name: 'Mail',
-    component: () => import('@/components/email/Layout.vue'),
-    redirect: {
-      path: '/mail/all'
-    },
-    children: [
-      {
-        path: '/mail/:mailType',
-        name: 'MailIndex',
-        component: () => import('@/components/email/List.vue')
-      },
-      {
-        path: '/mail/0/:uuid',
-        name: 'MailDetail',
-        component: () => import('@/components/email/Reply.vue')
+        component: () => import('@/views/pages/welcome/Index.vue')
       }
     ]
   }

@@ -74,9 +74,6 @@
             </v-card-text>
           </v-card>
         </v-col>
-        <v-col cols="12">
-          <v-subheader>Basic Table</v-subheader>
-        </v-col>
       </v-row>
     </v-container>
     <v-dialog v-model="dialog" max-width="60vh">
@@ -96,7 +93,7 @@
               required
             ></v-text-field>
             <v-divider class="mt-3 mb-3"></v-divider>
-            <v-btn @click="handleSubmit">submit</v-btn>
+            <v-btn>submit</v-btn>
           </form>
         </v-card-text>
       </v-card>

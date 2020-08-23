@@ -1,5 +1,5 @@
 <template>
-  <v-card tile>
+  <v-card>
     <v-card-title>
       <div class="layout row ma-0 justify-space-between pb-1">
         <div class="subheading">{{ title }}</div>

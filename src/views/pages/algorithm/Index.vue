@@ -10,34 +10,54 @@
           multiple
           chips
         /> -->
-        <v-text-field
-          style="width:200px;"
-          solo
-          append-icon="search"
-        ></v-text-field>
+
+        <v-card>
+          <v-toolbar flat>
+            <v-text-field
+              style="width:400px;flex:none;"
+              hide-details
+              solo
+              append-icon="search"
+            ></v-text-field>
+            <v-spacer></v-spacer>
+            <v-btn icon>
+              <v-icon>mdi-plus</v-icon>
+            </v-btn>
+            <v-btn icon>
+              <v-icon>mdi-dots-vertical</v-icon>
+            </v-btn>
+          </v-toolbar>
+          <v-card-text>
+            <linear-statistic
+              style="margin-bottom:20px;"
+              v-for="(item, index) in trending"
+              :key="'trending' + index"
+              @click.native="openDetail(item)"
+              :title="item.subheading"
+              :sub-title="item.caption"
+              :icon="item.icon.label"
+              :color="item.icon.color"
+              :value="item.linear.value"
+            />
+          </v-card-text>
+        </v-card>
       </v-col>
-      <v-col
+
+      <!-- <v-col
         cols="12"
         v-for="(item, index) in trending"
         :key="'trending' + index"
       >
-        <linear-statistic
-          @click.native="openDetail(item)"
-          :title="item.subheading"
-          :sub-title="item.caption"
-          :icon="item.icon.label"
-          :color="item.icon.color"
-          :value="item.linear.value"
-        />
+      </v-col> -->
+    </v-row>
+    <v-row>
+      <v-col cols="12">
+        <v-pagination v-model="page" :length="6"></v-pagination>
       </v-col>
     </v-row>
-    <v-col cols="12">
-      <v-pagination v-model="page" :length="6"></v-pagination>
-    </v-col>
     <Detail ref="detail"></Detail>
   </v-container>
 </template>
-
 <script>
 // import LetterRadioGroup from '@/components/widgets/radio/LetterRadioGroup'
 import LinearStatistic from '@/components/widgets/statistic/LinearStatistic'

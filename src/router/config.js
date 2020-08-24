@@ -1,9 +1,4 @@
-import {
-  LayoutAuth,
-  LayoutDefault,
-  LayoutChat,
-  RouteWrapper
-} from '@/components/layouts'
+import { LayoutAuth, LayoutDefault } from '@/components/layouts'
 
 export const publicRoute = [
   {
@@ -108,7 +103,7 @@ export const protectedRoute = [
           group: 'apps',
           icon: 'mdi-view-dashboard'
         },
-        component: () => import('@/views/pages/welcome/Index.vue')
+        component: () => import('@/views/pages/account/Index.vue')
       }
     ]
   }

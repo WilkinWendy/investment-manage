@@ -2,7 +2,7 @@ export default [
   {
     name: 'APP_LOGIN_SUCCESS',
     callback: () => {
-      this.$router.push({ path: 'dashboard' })
+      this.$router.push({ path: '' })
     }
   },
   {

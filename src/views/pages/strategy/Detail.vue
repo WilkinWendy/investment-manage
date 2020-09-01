@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="dialog" persistent>
+  <v-dialog v-model="dialog" scrollable persistent>
     <v-card>
       <v-toolbar flat>
         <v-toolbar-title> View Detail</v-toolbar-title>
@@ -32,23 +32,21 @@
           ></v-text-field>
 
           <Train></Train>
-          <v-divider class="mt-3 mb-3"></v-divider>
-
-          <v-row>
-            <v-btn @click="closeMe">cancel</v-btn>
-            <v-spacer></v-spacer>
-            <v-btn class="mr-4" rounded color="primary">
-              Fee Structure
-            </v-btn>
-            <v-btn class="mr-4" rounded color="primary">
-              Buy Automated Trading Robot
-            </v-btn>
-            <v-btn rounded color="primary">
-              Buy Algorithm Analytics
-            </v-btn>
-          </v-row>
         </form>
       </v-card-text>
+      <v-card-actions>
+        <v-btn @click="closeMe">cancel</v-btn>
+        <v-spacer></v-spacer>
+        <v-btn class="mr-4" rounded color="primary">
+          Fee Structure
+        </v-btn>
+        <v-btn class="mr-4" rounded color="primary">
+          Buy Automated Trading Robot
+        </v-btn>
+        <v-btn rounded color="primary">
+          Buy Algorithm Analytics
+        </v-btn>
+      </v-card-actions>
     </v-card>
   </v-dialog>
 </template>

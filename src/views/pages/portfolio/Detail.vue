@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="dialog" max-width="100vh">
+  <v-dialog scrollable v-model="dialog" max-width="100vh">
     <v-card>
       <v-toolbar flat>View Detail</v-toolbar>
       <v-card-text>
@@ -30,10 +30,12 @@
             label="param5"
             required
           ></v-text-field>
-          <v-divider class="mt-3 mb-3"></v-divider>
-          <v-btn>submit</v-btn>
         </form>
       </v-card-text>
+      <v-card-actions>
+        <v-spacer></v-spacer>
+        <v-btn>submit</v-btn>
+      </v-card-actions>
     </v-card>
   </v-dialog>
 </template>

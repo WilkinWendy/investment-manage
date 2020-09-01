@@ -84,7 +84,7 @@ export default {
       if (this.$refs.form.validate()) {
         this.loading = true
         setTimeout(() => {
-          this.$router.push('/dashboard')
+          this.$router.push('/')
         }, 1000)
       }
     },

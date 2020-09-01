@@ -1,13 +1,13 @@
 <template>
-  <v-dialog fullscreen v-model="dialog" persistent>
+  <v-dialog scrollable fullscreen v-model="dialog" persistent>
     <v-card>
       <v-toolbar flat>
         <v-toolbar-title> View Detail</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn icon @click="closeMe">
           <v-icon>mdi-close</v-icon>
-        </v-btn></v-toolbar
-      >
+        </v-btn>
+      </v-toolbar>
       <v-card-text>
         <form>
           <v-text-field
@@ -26,22 +26,21 @@
             required
           ></v-text-field>
           <Train></Train>
-          <v-divider class="mt-3 mb-3"></v-divider>
-          <v-row>
-            <v-btn @click="closeMe">cancel</v-btn>
-            <v-spacer></v-spacer>
-            <v-btn class="mr-4" rounded color="primary">
-              Buy For Publishing Strategy
-            </v-btn>
-            <v-btn class="mr-4" rounded color="primary">
-              Fee Structure
-            </v-btn>
-            <v-btn rounded color="primary">
-              Buy For Private Investing
-            </v-btn>
-          </v-row>
         </form>
       </v-card-text>
+      <v-card-actions>
+        <v-btn @click="closeMe">cancel</v-btn>
+        <v-spacer></v-spacer>
+        <v-btn class="mr-4" rounded color="primary">
+          Buy For Publishing Strategy
+        </v-btn>
+        <v-btn class="mr-4" rounded color="primary">
+          Fee Structure
+        </v-btn>
+        <v-btn rounded color="primary">
+          Buy For Private Investing
+        </v-btn>
+      </v-card-actions>
     </v-card>
   </v-dialog>
 </template>

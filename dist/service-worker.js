@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.3e579711e578159919122e76472ed776.js"
+  "precache-manifest.fe50c98c0bc1bc3587f01d2b36edf11e.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "investment-manage"});

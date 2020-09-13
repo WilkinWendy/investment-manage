@@ -53,13 +53,13 @@ export const protectedRoute = [
       group: 'apps',
       icon: ''
     },
-    redirect: '/welcome',
+    redirect: '/home',
     children: [
       {
-        path: '/welcome',
-        name: 'Welcome',
+        path: '/home',
+        name: 'Home',
         meta: {
-          title: 'Welcome',
+          title: 'Home',
           group: 'apps',
           icon: 'mdi-view-dashboard'
         },
@@ -99,6 +99,7 @@ export const protectedRoute = [
         path: '/accounts',
         name: 'accounts',
         meta: {
+          hidden: true,
           title: 'My Accounts',
           group: 'apps',
           icon: 'mdi-view-dashboard'

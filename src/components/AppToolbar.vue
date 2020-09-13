@@ -1,6 +1,15 @@
 <template>
   <v-app-bar color="primary" dark app>
-    <v-app-bar-nav-icon @click="handleDrawerToggle" />
+    <v-icon large color="blue darken-2">mdi-domain</v-icon>
+
+    <v-tabs>
+      <v-tab
+        @click="$router.push(item.path)"
+        :key="i"
+        v-for="(item, i) in computeMenu"
+        >{{ item.meta.title }}</v-tab
+      >
+    </v-tabs>
     <v-spacer />
     <v-toolbar-items>
       <v-btn icon @click="handleFullScreen()">
@@ -55,17 +64,10 @@
         </v-list>
       </v-menu>
     </v-toolbar-items>
-    <v-toolbar tag="div" dense slot="extension" color="white" light>
-      <v-icon>mdi-home</v-icon>
-      <v-breadcrumbs :items="breadcrumbs" class="pa-3" />
-      <v-spacer></v-spacer>
-      <v-btn icon small color="black">
-        <v-icon v-text="'mdi-arrow-left'" @click="handleGoBack" />
-      </v-btn>
-    </v-toolbar>
   </v-app-bar>
 </template>
 <script>
+import { protectedRoute as routes } from '@/router/config'
 import NotificationList from '@/components/widgets/list/NotificationList'
 import Util from '@/util'
 export default {
@@ -85,8 +87,8 @@ export default {
         {
           icon: 'settings',
           href: '#',
-          title: 'Settings',
-          click: this.handleSetting
+          title: 'Account',
+          click: this.handleAccounts
         },
         {
           icon: 'fullscreen_exit',
@@ -100,6 +102,9 @@ export default {
   computed: {
     toolbarColor() {
       return this.$vuetify.options.extra.mainNav
+    },
+    computeMenu() {
+      return routes[0].children.filter((item) => !item.meta.hidden)
     },
     breadcrumbs() {
       const { matched } = this.$route
@@ -127,7 +132,7 @@ export default {
     handleLogut() {
       this.$router.push('/auth/login')
     },
-    handleSetting() {},
+    handleAccounts() {},
     handleProfile() {},
     handleGoBack() {
       this.$router.go(-1)

@@ -10,7 +10,7 @@
               width="55"
             />
             <h1 class="primary--text display-1">
-              Chiron Trading
+              Quant Fen
             </h1>
           </v-card-title>
           <v-card-text>

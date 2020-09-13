@@ -1,6 +1,5 @@
 <template>
   <v-app id="inspire" class="app dashboard">
-    <app-drawer class="app--drawer" :show-drawer="showDrawer" />
     <app-toolbar class="app--toolbar" @side-icon-click="handleDrawerVisiable" />
     <v-main>
       <!-- Page Header -->
@@ -8,27 +7,19 @@
       <!-- App Footer -->
       <v-footer height="auto" class="pa-3 app--footer">
         <v-spacer />
-        <span>Chiron Trading &copy; {{ new Date().getFullYear() }}</span>
+        <span>Quant Fen &copy; {{ new Date().getFullYear() }}</span>
       </v-footer>
     </v-main>
-    <!-- Go to top -->
-    <app-fab />
   </v-app>
 </template>
 
 <script>
-import AppDrawer from '@/components/AppDrawer'
 import AppToolbar from '@/components/AppToolbar'
-import AppFab from '@/components/AppFab'
-
 export default {
   name: 'LayoutDefault',
   components: {
-    AppDrawer,
-    AppToolbar,
-    AppFab
+    AppToolbar
   },
-
   data() {
     return {
       showDrawer: true

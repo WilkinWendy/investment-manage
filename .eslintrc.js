@@ -1,6 +1,8 @@
 module.exports = {
   root: true,
-
+  "settings": {
+    "import/resolver": "webpack"
+  },
   env: {
     node: true,
   },

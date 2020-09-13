@@ -66,6 +66,16 @@ export const protectedRoute = [
         component: () => import('@/views/pages/welcome/Index.vue')
       },
       {
+        path: '/rankings',
+        name: 'Ranking',
+        meta: {
+          title: 'Ranking',
+          group: 'apps',
+          icon: 'mdi-view-dashboard'
+        },
+        component: () => import('@/views/pages/welcome/Index.vue')
+      },
+      {
         path: '/portfolios',
         name: 'Portfolios',
         meta: {
@@ -90,6 +100,16 @@ export const protectedRoute = [
         name: 'Agorithms',
         meta: {
           title: 'Agorithms',
+          group: 'apps',
+          icon: 'mdi-view-dashboard'
+        },
+        component: () => import('@/views/pages/algorithm/Index.vue')
+      },
+      {
+        path: '/develop',
+        name: 'Develop',
+        meta: {
+          title: 'Develop',
           group: 'apps',
           icon: 'mdi-view-dashboard'
         },

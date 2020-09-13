@@ -3,6 +3,7 @@ import router from './router/'
 import store from './store/'
 import './registerServiceWorker'
 import './plugins/vuetify'
+import './plugins/localforage'
 import './theme/default.sass'
 
 import App from './App.vue'

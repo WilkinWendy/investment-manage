@@ -45,8 +45,23 @@
             </v-form>
           </v-card-text>
           <v-card-actions>
+            <v-btn
+              large
+              tile
+              color="primary"
+              @click="prologin"
+              :loading="loading"
+            >
+              Provider Login
+            </v-btn>
             <v-spacer />
-            <v-btn large tile color="primary" @click="login" :loading="loading">
+            <v-btn
+              large
+              tile
+              color="primary"
+              @click="investorlogin"
+              :loading="loading"
+            >
               Login
             </v-btn>
           </v-card-actions>
@@ -80,6 +95,24 @@ export default {
     }
   },
   methods: {
+    prologin() {
+      this.$vlf
+        .setItem('userinfo', {
+          role: 'provider'
+        })
+        .then(() => {
+          this.login()
+        })
+    },
+    investorlogin() {
+      this.$vlf
+        .setItem('userinfo', {
+          role: 'investor'
+        })
+        .then(() => {
+          this.login()
+        })
+    },
     login() {
       if (this.$refs.form.validate()) {
         this.loading = true

@@ -69,6 +69,7 @@
 <script>
 import { protectedRoute as routes } from '@/router/config'
 import NotificationList from '@/components/widgets/list/NotificationList'
+import { goAccount } from '@/jumper'
 import Util from '@/util'
 export default {
   name: 'AppToolbar',
@@ -78,12 +79,6 @@ export default {
   data() {
     return {
       profileMenus: [
-        {
-          icon: 'account_circle',
-          href: '#',
-          title: 'Profile',
-          click: this.handleProfile
-        },
         {
           icon: 'settings',
           href: '#',
@@ -105,21 +100,6 @@ export default {
     },
     computeMenu() {
       return routes[0].children.filter((item) => !item.meta.hidden)
-    },
-    breadcrumbs() {
-      const { matched } = this.$route
-      return matched.map((route, index) => {
-        const to =
-          index === matched.length - 1
-            ? this.$route.path
-            : route.path || route.redirect
-        return {
-          text: route.meta.title,
-          to: to,
-          exact: true,
-          disabled: false
-        }
-      })
     }
   },
   methods: {
@@ -132,10 +112,8 @@ export default {
     handleLogut() {
       this.$router.push('/auth/login')
     },
-    handleAccounts() {},
-    handleProfile() {},
-    handleGoBack() {
-      this.$router.go(-1)
+    handleAccounts() {
+      goAccount()
     }
   },
   created() {}

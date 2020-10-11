@@ -9,6 +9,11 @@ import './theme/default.sass'
 import App from './App.vue'
 import vuetify from './plugins/vuetify'
 import '@mdi/font/css/materialdesignicons.css'
+import VueCodemirror from 'vue-codemirror'
+
+import 'codemirror/lib/codemirror.css'
+
+Vue.use(VueCodemirror)
 
 Vue.config.productionTip = false
 

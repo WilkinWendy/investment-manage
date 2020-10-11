@@ -113,7 +113,7 @@ export const protectedRoute = [
           group: 'apps',
           icon: 'mdi-view-dashboard'
         },
-        component: () => import('@/views/pages/algorithm/Index.vue')
+        component: () => import('@/views/pages/develop/Index.vue')
       },
       {
         path: '/accounts',

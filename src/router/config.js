@@ -63,7 +63,7 @@ export const protectedRoute = [
           group: 'apps',
           icon: 'mdi-view-dashboard'
         },
-        component: () => import('@/views/pages/welcome/Index.vue')
+        component: () => import('@/views/pages/home/Index.vue')
       },
       {
         path: '/rankings',
@@ -73,7 +73,7 @@ export const protectedRoute = [
           group: 'apps',
           icon: 'mdi-view-dashboard'
         },
-        component: () => import('@/views/pages/welcome/Index.vue')
+        component: () => import('@/views/pages/ranking/Index.vue')
       },
       {
         path: '/portfolios',

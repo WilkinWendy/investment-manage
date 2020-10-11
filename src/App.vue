@@ -2,7 +2,7 @@
   <v-app :dark="true">
     <router-view></router-view>
     <!-- theme setting -->
-    <v-btn
+    <!-- <v-btn
       small
       fab
       dark
@@ -14,7 +14,7 @@
       @click="openThemeSettings"
     >
       <v-icon>settings</v-icon>
-    </v-btn>
+    </v-btn> -->
     <!-- setting drawer -->
     <v-navigation-drawer
       class="setting-drawer"

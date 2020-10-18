@@ -220,7 +220,8 @@ export default {
           icon: 'mdi-close',
           click: this.handleDeleteItem
         }
-      ]
+      ],
+      search: ''
     }
   }
 }

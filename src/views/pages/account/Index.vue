@@ -1,31 +1,32 @@
 <template>
   <v-card>
     <v-tabs background-color="transparent" color="basil" v-model="tab">
-      <v-tab key="investor">investor</v-tab>
-      <v-tab key="provider">provider</v-tab>
-
-      <v-tabs-items v-model="tab">
-        <v-tab-item key="investor">
-          <v-card flat>
-            <InvestorAccount />
-          </v-card>
-        </v-tab-item>
-        <v-tab-item key="provider">
-          <v-card flat>
-            <ProviderAccount />
-          </v-card>
-        </v-tab-item>
-      </v-tabs-items>
+      <v-tab v-if="hasPermission('account-investor')" key="investor">
+        investor
+      </v-tab>
+      <v-tab v-if="hasPermission('account-developer')" key="developer">
+        developer
+      </v-tab>
     </v-tabs>
+    <v-tabs-items v-model="tab">
+      <v-tab-item v-if="hasPermission('account-investor')" key="investor">
+        <v-card flat>
+          <InvestorAccount />
+        </v-card>
+      </v-tab-item>
+      <v-tab-item v-if="hasPermission('account-developer')" key="developer">
+        <v-card flat>
+          <ProviderAccount />
+        </v-card>
+      </v-tab-item>
+    </v-tabs-items>
   </v-card>
 </template>
 
 <script>
-import VWidget from '@/components/VWidget'
-import PurchaseList from './PurchaseList'
 import ProviderAccount from './ProviderAccount'
 import InvestorAccount from './InvestorAccount'
-import { Items as Users } from '@/api/user'
+
 export default {
   components: {
     InvestorAccount,
@@ -33,8 +34,14 @@ export default {
   },
   data() {
     return {
-      tab: 'investor'
+      tab: ''
     }
+  },
+  async mounted() {
+    // const userinfo = await this.$vlf.getItem('userinfo')
+    // debugger
+    // window.aaa = this
+    // this.tab = userinfo.role
   },
   methods: {
     handleClick(row) {

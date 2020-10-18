@@ -37,13 +37,23 @@
       <v-card-actions>
         <v-btn @click="closeMe">cancel</v-btn>
         <v-spacer></v-spacer>
-        <v-btn class="mr-4" rounded color="primary">
+        <v-btn
+          v-permission="'strategy-fee'"
+          class="mr-4"
+          rounded
+          color="primary"
+        >
           Fee Structure
         </v-btn>
-        <v-btn class="mr-4" rounded color="primary">
+        <v-btn
+          v-permission="'strategy-buy'"
+          class="mr-4"
+          rounded
+          color="primary"
+        >
           Buy Automated Trading Robot
         </v-btn>
-        <v-btn rounded color="primary">
+        <v-btn v-permission="'strategy-buy'" rounded color="primary">
           Buy Algorithm Analytics
         </v-btn>
       </v-card-actions>
@@ -70,7 +80,7 @@ export default {
     }
   },
   methods: {
-    open(data) {
+    open() {
       this.dialog = true
     },
     closeMe() {

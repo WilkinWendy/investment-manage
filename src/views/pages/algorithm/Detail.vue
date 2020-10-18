@@ -31,13 +31,23 @@
       <v-card-actions>
         <v-btn @click="closeMe">cancel</v-btn>
         <v-spacer></v-spacer>
-        <v-btn class="mr-4" rounded color="primary">
+        <v-btn
+          v-permission="'algorithm-release_strategy'"
+          class="mr-4"
+          rounded
+          color="primary"
+        >
           Buy For Publishing Strategy
         </v-btn>
-        <v-btn class="mr-4" rounded color="primary">
+        <v-btn
+          v-permission="'algorithm-fee'"
+          class="mr-4"
+          rounded
+          color="primary"
+        >
           Fee Structure
         </v-btn>
-        <v-btn rounded color="primary">
+        <v-btn v-permission="'algorithm-buy'" rounded color="primary">
           Buy For Private Investing
         </v-btn>
       </v-card-actions>
@@ -67,7 +77,7 @@ export default {
     closeMe() {
       this.dialog = false
     },
-    open(data) {
+    open() {
       this.dialog = true
     }
   }

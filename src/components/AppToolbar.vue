@@ -7,6 +7,7 @@
         @click="$router.push(item.path)"
         :key="i"
         v-for="(item, i) in computeMenu"
+        v-permission="item.meta.permissionKey"
         >{{ item.meta.title }}</v-tab
       >
     </v-tabs>
@@ -44,6 +45,7 @@
         </template>
         <v-list class="pa-0">
           <v-list-item
+            v-permission="item.permisstionKey"
             v-for="(item, index) in profileMenus"
             :to="!item.href ? { name: item.name } : null"
             :href="item.href"
@@ -70,6 +72,7 @@
 import { protectedRoute as routes } from '@/router/config'
 import NotificationList from '@/components/widgets/list/NotificationList'
 import { goAccount } from '@/jumper'
+import { setRole } from '@/authConfig'
 import Util from '@/util'
 export default {
   name: 'AppToolbar',
@@ -83,13 +86,22 @@ export default {
           icon: 'settings',
           href: '#',
           title: 'Account',
-          click: this.handleAccounts
+          click: this.handleAccounts,
+          permisstionKey: 'account'
         },
         {
           icon: 'fullscreen_exit',
           href: '#',
           title: 'Logout',
-          click: this.handleLogut
+          click: this.handleLogut,
+          permisstionKey: 'logout'
+        },
+        {
+          icon: 'fullscreen_exit',
+          href: '#',
+          title: 'Login',
+          click: this.handleLogin,
+          permisstionKey: 'login'
         }
       ]
     }
@@ -109,7 +121,11 @@ export default {
     handleFullScreen() {
       Util.toggleFullScreen()
     },
-    handleLogut() {
+    async handleLogut() {
+      await setRole('')
+      this.$router.push('/auth/login')
+    },
+    handleLogin() {
       this.$router.push('/auth/login')
     },
     handleAccounts() {

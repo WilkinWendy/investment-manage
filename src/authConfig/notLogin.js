@@ -1,6 +1,7 @@
 export default {
-  'acount-developer': false,
-  'acount-investor': false,
+  account: false,
+  'account-developer': false,
+  'account-investor': false,
   profile: false,
   logout: false,
   login: true,

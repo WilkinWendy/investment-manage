@@ -6,6 +6,7 @@
       <div class="page-wrapper"><router-view /></div>
       <!-- App Footer -->
       <v-footer height="auto" class="pa-3 app--footer">
+        <span>{{ roleTip }}</span>
         <v-spacer />
         <span>Quant Fen &copy; {{ new Date().getFullYear() }}</span>
       </v-footer>
@@ -22,8 +23,13 @@ export default {
   },
   data() {
     return {
-      showDrawer: true
+      showDrawer: true,
+      roleTip: ''
     }
+  },
+  async mounted() {
+    const userinfo = await this.$vlf.getItem('userinfo')
+    this.roleTip = userinfo.role
   },
   methods: {
     handleDrawerVisiable() {

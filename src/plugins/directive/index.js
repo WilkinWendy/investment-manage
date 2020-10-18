@@ -1,5 +1,4 @@
-
 import permission from './permission'
-export function install(vue){
-    vue.use(permission)
+export default function install(Vue) {
+  Vue.use(permission)
 }

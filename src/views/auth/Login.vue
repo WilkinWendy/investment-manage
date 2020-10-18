@@ -72,7 +72,7 @@
 </template>
 
 <script>
-import { setCurrentUserToGlodal } from '@/authConfig'
+import { setRole } from '@/authConfig'
 
 export default {
   name: 'PageLogin',
@@ -97,29 +97,15 @@ export default {
     }
   },
   methods: {
-    prologin() {
-      this.$vlf
-        .setItem('userinfo', {
-          role: 'provider'
-        })
-        .then(() => {
-          this.login()
-        })
+    async prologin() {
+      await setRole('provider')
+      this.login()
     },
-    investorlogin() {
-      this.$vlf
-        .setItem('userinfo', {
-          role: 'investor'
-        })
-        .then(() => {
-          this.login()
-        })
+    async investorlogin() {
+      await setRole('investor')
+      this.login()
     },
     async login() {
-      // 读取当前角色名，初始化角色权限配置到全局
-      var role = await this.$vlf.getItem('role')
-      setCurrentUserToGlodal(role)
-
       if (this.$refs.form.validate()) {
         this.loading = true
         setTimeout(() => {
@@ -135,6 +121,6 @@ export default {
 <style lang="sass" scoped>
 .page-login
   &__card
-  max-width: 600px
-  margin: 0 auto
+    max-width: 600px
+    margin: 0 auto
 </style>

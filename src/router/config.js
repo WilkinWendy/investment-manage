@@ -61,7 +61,8 @@ export const protectedRoute = [
         meta: {
           title: 'Home',
           group: 'apps',
-          icon: 'mdi-view-dashboard'
+          icon: 'mdi-view-dashboard',
+          permissionKey: 'home'
         },
         component: () => import('@/views/pages/home/Index.vue')
       },
@@ -71,7 +72,8 @@ export const protectedRoute = [
         meta: {
           title: 'Ranking',
           group: 'apps',
-          icon: 'mdi-view-dashboard'
+          icon: 'mdi-view-dashboard',
+          permissionKey: 'ranking'
         },
         component: () => import('@/views/pages/ranking/Index.vue')
       },
@@ -81,7 +83,8 @@ export const protectedRoute = [
         meta: {
           title: 'Portfolios',
           group: 'apps',
-          icon: 'mdi-view-dashboard'
+          icon: 'mdi-view-dashboard',
+          permissionKey: 'portfolio-list_released'
         },
         component: () => import('@/views/pages/portfolio/Index.vue')
       },
@@ -91,7 +94,8 @@ export const protectedRoute = [
         meta: {
           title: 'Strategies',
           group: 'apps',
-          icon: 'mdi-view-dashboard'
+          icon: 'mdi-view-dashboard',
+          permissionKey: 'strategy-list_released'
         },
         component: () => import('@/views/pages/strategy/Index.vue')
       },
@@ -101,7 +105,8 @@ export const protectedRoute = [
         meta: {
           title: 'Agorithms',
           group: 'apps',
-          icon: 'mdi-view-dashboard'
+          icon: 'mdi-view-dashboard',
+          permissionKey: 'algorithm-list_released'
         },
         component: () => import('@/views/pages/algorithm/Index.vue')
       },
@@ -111,7 +116,8 @@ export const protectedRoute = [
         meta: {
           title: 'Develop',
           group: 'apps',
-          icon: 'mdi-view-dashboard'
+          icon: 'mdi-view-dashboard',
+          permissionKey: 'development-list_to_manage'
         },
         component: () => import('@/views/pages/develop/Index.vue')
       },

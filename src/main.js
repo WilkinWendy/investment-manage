@@ -12,18 +12,23 @@ import '@mdi/font/css/materialdesignicons.css'
 import VueCodemirror from 'vue-codemirror'
 
 import 'codemirror/lib/codemirror.css'
-
+import { setCurrentUserToGlodal } from '@/authConfig'
+import directivePlugin from '@/plugins/directive'
+Vue.use(directivePlugin)
 Vue.use(VueCodemirror)
 
 Vue.config.productionTip = false
 
-import { setCurrentUserToGlodal } from '@/authConfig'
-setCurrentUserToGlodal()
-const app = new Vue({
-  router,
-  store,
-  vuetify,
-  render: (h) => h(App)
-})
+async function init() {
+  await setCurrentUserToGlodal()
 
-app.$mount('#app')
+  const app = new Vue({
+    router,
+    store,
+    vuetify,
+    render: (h) => h(App)
+  })
+
+  app.$mount('#app')
+}
+init()

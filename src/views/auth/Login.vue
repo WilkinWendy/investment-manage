@@ -72,6 +72,8 @@
 </template>
 
 <script>
+import { setCurrentUserToGlodal } from '@/authConfig'
+
 export default {
   name: 'PageLogin',
   data() {
@@ -113,7 +115,11 @@ export default {
           this.login()
         })
     },
-    login() {
+    async login() {
+      // 读取当前角色名，初始化角色权限配置到全局
+      var role = await this.$vlf.getItem('role')
+      setCurrentUserToGlodal(role)
+
       if (this.$refs.form.validate()) {
         this.loading = true
         setTimeout(() => {

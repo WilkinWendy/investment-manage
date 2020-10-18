@@ -17,6 +17,8 @@ Vue.use(VueCodemirror)
 
 Vue.config.productionTip = false
 
+import { setCurrentUserToGlodal } from '@/authConfig'
+setCurrentUserToGlodal()
 const app = new Vue({
   router,
   store,

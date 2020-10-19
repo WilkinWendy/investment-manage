@@ -7,7 +7,7 @@ export { investor, notLogin, provider }
 export async function setCurrentUserToGlodal() {
   // 读取当前角色名，初始化角色权限配置到全局
   var userinfo = await Vue.prototype.$vlf.getItem('userinfo')
-  var roleName = userinfo.role
+  var roleName = userinfo && userinfo.role
   console.log('userinfo.role', roleName)
   var userMap = {
     investor: investor,

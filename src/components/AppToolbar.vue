@@ -1,15 +1,15 @@
 <template>
   <v-app-bar color="primary" dark app>
-    <v-icon large color="blue darken-2">mdi-domain</v-icon>
-
+    <img class="logo" :src="require('@/assets/home/QuantFen01.png')" />
     <v-tabs>
       <v-tab
         @click="$router.push(item.path)"
         :key="i"
         v-for="(item, i) in computeMenu"
         v-permission="item.meta.permissionKey"
-        >{{ item.meta.title }}</v-tab
       >
+        {{ item.meta.title }}
+      </v-tab>
     </v-tabs>
     <v-spacer />
     <v-toolbar-items>
@@ -136,4 +136,9 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="less" scoped>
+.logo {
+  width: 60px;
+  margin-right: 20px;
+}
+</style>

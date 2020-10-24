@@ -8,9 +8,9 @@
     :dark="$vuetify.dark"
   >
     <v-toolbar color="primary darken-1" dark>
-      <img :src="computeLogo" height="36" alt="Quant Fen" />
+      <img :src="computeLogo" height="36" alt="QuantFen" />
       <v-toolbar-title class="ml-0 pl-3">
-        <span class="hidden-sm-and-down">Quant Fen</span>
+        <span class="hidden-sm-and-down">QuantFen</span>
       </v-toolbar-title>
     </v-toolbar>
 

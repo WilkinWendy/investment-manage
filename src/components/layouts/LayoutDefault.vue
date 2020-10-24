@@ -8,7 +8,7 @@
       <v-footer height="auto" class="pa-3 app--footer">
         <span>{{ roleTip }}</span>
         <v-spacer />
-        <span>Quant Fen &copy; {{ new Date().getFullYear() }}</span>
+        <span>QuantFen &copy; {{ new Date().getFullYear() }}</span>
       </v-footer>
     </v-main>
   </v-app>

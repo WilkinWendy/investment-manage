@@ -1,15 +1,14 @@
 <template>
   <div class="the-home-box">
     <v-parallax height="800" :src="require('@/assets/home/homebg.webp')">
-      <span class="intro"
-        >Trade with your <br />
+      <span class="intro">
+        Trade with your <br />
         customized <br />
-        Algorithm with Chiron <br />
-        Capital</span
-      >
+        Algorithm with QuantFen
+      </span>
       <span class="intro2">
-        Easy & Cheap, First Customized Algorithmic Trading Analytic Platform for
-        Retail Users
+        Easy & low cost, first customised algorithmic trading analytics platform
+        for retail users
       </span>
       <a
         href="mailto:ChironCapital@hotmail.com"
@@ -24,7 +23,7 @@
     <div class="section2">
       <h4 class="titletext">Algorithms</h4>
       <h5 class="subtitletext">
-        Customized Algorithm Strategies for Retail Investors, fitting to your
+        Customized algorithm strategies for retail investors, fitting your
         financial position and market view
       </h5>
 
@@ -62,12 +61,17 @@
           Algorithmic Trading Strategy Analytic Platform
         </div>
         <div class="about-desp">
-          Chiron Capital assists retail investors with customized algorithmic
-          analytic into the huge untapped market with a recipe to success. Our
-          methods have been tried and tested by major expert analysts and
-          investment bankers, approving our successful formula. With
-          professional background credibility, Chiron Capital is here to ensure
-          that your financial present and future are on the path to success.
+          QuantFen assists retail investors with customized algorithmic analytic
+          into the huge untapped market with a recipe to success. Our methods
+          have been tried and tested by major expert analysts and investment
+          bankers, approving our successful formula. With professional
+          background credibility, QuantFen is here to ensure that your financial
+          present and future are on the path to success.
+          <br />
+          In 2020, we opened our doors to become the first customized
+          algorithmic trading strategy analytic platform for retail investors
+          with unsurpassed service. We hold ourselves to the highest standards
+          in everything we do.
         </div>
       </div>
       <div class="img-area">
@@ -110,7 +114,7 @@ export default {
   background-color: #3c141b;
   .intro {
     font-weight: bold;
-    color: #dfb6c5;
+    color: #0e54d4;
     font-size: 72px;
     text-align: center;
   }

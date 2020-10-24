@@ -3,6 +3,7 @@
     <v-row style="height:calc(100vh - 150px)">
       <v-col cols="2">
         <v-list>
+          <v-subheader>Solutions</v-subheader>
           <v-list-item-group v-model="model">
             <v-list-item v-for="(item, i) in items" :key="i">
               <v-list-item-icon>
@@ -15,39 +16,72 @@
           </v-list-item-group>
         </v-list>
       </v-col>
-      <v-col cols="10" style="position:relative;height:100%;">
-        <div class="button-area">
-          <v-btn small color="primary">Save</v-btn>
-          <v-btn small color="primary">BackTest</v-btn>
-        </div>
+      <v-col cols="10" style="position:relative;height:100%;overflow:auto;">
+        <v-card>
+          <v-toolbar flat>
+            <v-btn small color="primary">Save</v-btn>
+            <v-spacer></v-spacer>
+            <v-btn
+              small
+              color="primary"
+              style="margin-right:5px;"
+              @click="openBackTest"
+            >
+              Run Full BackTest
+            </v-btn>
+            <v-btn small color="primary">Build Algorithm</v-btn>
+          </v-toolbar>
 
-        <div class="code">
-          <codemirror
-            style="height:100%;"
-            v-model="code"
-            :options="cmOptions"
-          />
-        </div>
+          <v-card-text>
+            <form>
+              <v-text-field
+                v-model="formModel.name"
+                label="Name"
+                required
+              ></v-text-field>
+              <v-text-field
+                v-model="formModel.desp"
+                label="Description "
+                required
+              ></v-text-field>
+              <div class="code">
+                <codemirror
+                  style="height:500px;"
+                  v-model="code"
+                  :options="cmOptions"
+                />
+              </div>
+            </form>
+          </v-card-text>
+        </v-card>
       </v-col>
     </v-row>
+    <Detail ref="detail"></Detail>
   </v-container>
 </template>
 
 <script>
+import Detail from './Detail'
 // import language js
 import 'codemirror/mode/javascript/javascript.js'
 // import theme style
 import 'codemirror/theme/base16-dark.css'
 
 export default {
-  components: {},
+  components: {
+    Detail
+  },
   methods: {
-    openDetail(item) {
+    openBackTest(item) {
       this.$refs.detail.open(item)
     }
   },
   data: () => ({
     code: 'const a = 1',
+    formModel: {
+      name: 'algo1',
+      desc: 'simple description'
+    },
     cmOptions: {
       tabSize: 4,
       mode: 'text/javascript',
@@ -82,7 +116,7 @@ export default {
 @buttonareaHeight: 30px;
 .button-area {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   height: @buttonareaHeight;
 }
 .code {

@@ -83,6 +83,7 @@
 <script>
 import TrainResult from './TrainResult'
 export default {
+  name: 'train',
   components: {
     TrainResult
   },
